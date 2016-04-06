@@ -1,0 +1,17 @@
+exclude: ["Gemfile"]
+encoding: utf-8
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+      flavor: default
+  -
+    scope:
+      path: "comp"
+    values:
+      flavor: hightech
+kramdown:
+  smart_quotes: apos,apos,quot,quot # Disable smart quotes.
+

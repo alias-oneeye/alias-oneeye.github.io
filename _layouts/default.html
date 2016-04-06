@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    {% if page.title %}
+    <title>AO-E: {{ page.title }}</title>
+    {% else %}
+    <title>Alias One-Eye</title>
+    {% endif %}
+    <link rel='stylesheet' href='/css/default.css'>
+    {% if page.flavor == "hightech" %}
+    <style><!--
+
+      /* #content { */
+      body {
+        font-family: Courier New, Consolas, monospace;
+      }
+      header nav ul {
+        list-style-type: decimal;
+      }
+      #content .links ol {
+        list-style-type: decimal;
+      }
+      #categories p {
+        display: inline-block;
+      }
+      #categories ul {
+        display: inline-block;
+      }
+      #categories li {
+        display: inline-block;
+        list-style-type: none;
+      }
+
+    --></style>
+    {% endif %}
+  </head>
+  <body>
+    <header id='cookie-header'>
+      <div>
+        This site uses cookies.
+        <input type='button'
+               id='cookie-accept'
+               name='cookie-accept'
+               value='I agree to allow cookies.'>
+      </div>
+    </header>
+    <header id='page-header'>
+      <div>
+        <a href='/'><img width='200' height='180'
+          style='vertical-align: top'
+          alt='The Death of Socrates, Jacques Louis David, 1787'
+          title='The Death of Socrates, Jacques Louis David, 1787'
+          src='/img/Jacques Louis David - 1787 The Death of Socrates cropped 200W.jpg'></a>
+      </div>
+      <div>
+        <h1>Alias One-Eye</h1>
+        <p class='motto'>"Will this guy ever shut up?"</p>
+        <nav>
+          <ul>
+            <li><a href='/'>Home</a></li>
+            <li><a href='/blog.html'>The Blog</li>
+            <li><a href='/about.html'>About this site</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <hr>
+
+    <main id='content'>
+      {% if page.title %}
+      <h1>{{ page.title }}</h1>
+      {% endif %}
+      {% if page.tags %}
+      <p id='tags'>Tags:
+        {% for tag in page.tags %}
+        <a href=
+          {% case tag %}
+          {% when 'Aeneid' %} "/books/aeneid.html"
+          {% when 'GeneWolfe' %} "/books/wolfe.html"
+          {% else %} "xyz"
+          {% endcase %}
+        >{{ tag }}</a>
+        {% endfor %}
+      </p>
+      {% endif %}
+      <!-- BEGIN PAGE CONTENTS -->
+
+{{ content  }}
+
+      <!-- END PAGE CONTENTS -->
+    </main>
+    <hr>
+    <footer id='page-footer'>
+      {% unless page.no_comments %}
+        <p>I don't feel like hosting public comments on my site. If you
+        want to share your thoughts, feel free to share this page on
+        <a href='https://reddit.com'>Reddit</a> or whatever public site
+        you prefer.</p>
+      {% endunless %}
+      <p>I invite you to contact me personally by sending email to
+      "alias dot oneeye" at the famous email service run by Google.</p>
+      {{@ include words.html @}}
+    </footer>
+  </body>
+  <script language='javascript' src='/js/cookie.js'></script>
+</html>

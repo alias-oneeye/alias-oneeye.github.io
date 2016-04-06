@@ -1,0 +1,14 @@
+
+/* Reset CSS */
+* { margin: 0px; padding: 0px; }
+/* h2, h3, h4, h5, p  { margin: 0 20px; padding: .5em 0; }
+ul.list, ol.list  { margin: 0px; padding: 0px; } */
+img, fieldset { border: 0px;}
+li { list-style-type: none; }
+a { text-decoration: none; }
+textarea { font-family: inherit; }
+
+/*
+hr { margin: 10px; }
+p { margin: 10px; }
+*/
